@@ -17,7 +17,7 @@ spec:
         app: solar-system
     spec:
       containers:
-      - image: docker.io/pvaddocker/solar-system:92e815d0c7719fe4902d04e094d100b0211818e2
+      - image: docker.io/pvaddocker/solar-system:a93abd956cfd521947e26455fc2487273be56309
         imagePullPolicy: Always
         name: solar-system
         ports:
