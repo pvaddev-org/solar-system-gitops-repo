@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../base
+  - ecr-refresher-rbac.yaml
+  - ecr-cronjob.yml
+  - aws-sealed-secret.yaml
+# This patch adds the 'imagePullSecrets' to the base deployment
+patches:
+  - path: patch-image-pull-secrets.yml

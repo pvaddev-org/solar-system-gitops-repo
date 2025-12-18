@@ -25,4 +25,4 @@ spec:
           protocol: TCP
         envFrom:
         - secretRef:
-            name: mongo-uri
+            name: mongo-db-creds

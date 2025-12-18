@@ -1,0 +1,36 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: ecr-token-refresher
+  namespace: solar-system
+spec:
+  schedule: "0 */8 * * *" # Every 8 hours
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccountName: ecr-refresher-sa
+          containers:
+          - name: ecr-token-helper
+            image: odaniait/aws-kubectl:latest
+            env:
+              - name: AWS_REGION
+                value: "us-east-1"
+            envFrom:
+              - secretRef:
+                  name: aws-credentials
+            command:
+            - /bin/sh
+            - -c
+            - |-
+              # 1. Get new password from AWS
+              TOKEN=$(aws ecr get-login-password --region ${AWS_REGION})
+              
+              # 2. Create/Update the secret in K8s
+              # We use the placeholder URL; the actual pull happens via host matching
+              kubectl delete secret --ignore-not-found ecr-registry-secret
+              kubectl create secret docker-registry ecr-registry-secret \
+                --docker-server=${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com \
+                --docker-username=AWS \
+                --docker-password="${TOKEN}"
+          restartPolicy: OnFailure
