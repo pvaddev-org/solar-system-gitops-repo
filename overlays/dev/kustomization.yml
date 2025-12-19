@@ -8,4 +8,4 @@ resources:
   - aws-sealed-secret.yml
 # This patch adds the 'imagePullSecrets' to the base deployment
 patches:
-  - path: patch-image-pull-secrets.yml
+  - path: patch-image-pull-secret.yml
