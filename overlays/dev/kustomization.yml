@@ -5,7 +5,7 @@ resources:
   - ../../base
   - ecr-refresher-rbac.yml
   - ecr-cronjob.yml
-  - aws-sealed-secret.yaml
+  - aws-sealed-secret.yml
 # This patch adds the 'imagePullSecrets' to the base deployment
 patches:
   - path: patch-image-pull-secrets.yml
