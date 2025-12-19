@@ -3,7 +3,7 @@ kind: Kustomization
 
 resources:
   - ../../base
-  - ecr-refresher-rbac.yaml
+  - ecr-refresher-rbac.yml
   - ecr-cronjob.yml
   - aws-sealed-secret.yaml
 # This patch adds the 'imagePullSecrets' to the base deployment
