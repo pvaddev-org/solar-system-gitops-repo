@@ -7,6 +7,6 @@ resources:
   - secret.yml
 
 images:
-- name: ${ECR_HOST_URL}/pvaddocker/solar-system
-  newName: placeholder-for-argocd
-  newTag: latest
+  - name: ${ECR_HOST_URL}/pvaddocker/solar-system
+    newName: placeholder-for-argocd
+    newTag: latest
