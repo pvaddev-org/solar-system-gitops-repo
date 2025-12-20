@@ -16,7 +16,7 @@ spec:
         app: solar-system
     spec:
       containers:
-      - image: ${ECR_HOST_URL}/pvaddocker/solar-system
+      - image: pvaddocker/solar-system
         imagePullPolicy: Always
         name: solar-system
         ports:
