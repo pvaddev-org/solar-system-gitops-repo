@@ -8,4 +8,4 @@ resources:
 
 images:
   - name: pvaddocker/solar-system
-    newTag: latest
+    newTag: e371d1908b84b8d558884c0d014c2b43091863a5
