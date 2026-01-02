@@ -7,5 +7,5 @@ resources:
   - secret.yml
 
 images:
-  - name: pvaddocker/solar-system
-    newTag: 23c030f7c42a971e29e165ca3f7003becd53e6d4
+  - name: solar-system-app
+    newTag: e371d1908b84b8d558884c0d014c2b43091863a5
