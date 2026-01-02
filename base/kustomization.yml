@@ -8,5 +8,5 @@ resources:
 
 images:
   - name: solar-system-app
-    newTag: baa057affe8d652e8708bacc3e1ab75b69897183
+    newTag: 5d45da64f99892105bd6270fcd8a2b685465b251
 
